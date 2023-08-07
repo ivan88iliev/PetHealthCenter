@@ -3,6 +3,56 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Pet Health Center</h1>
+    <h2>Your pet health center personal assistent</h2>
 </div>
+
+<div class="mb-5"></div>
+
+<div class="card-group">
+    @if (User.IsInRole(ServiceAdviser))
+    {
+        @if (User.IsInRole(AdminRolleName))
+        {
+            <div class="card">
+                <img class="card-img-top" src="/images/doctor.jpg" height="250" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Employees</h5>
+                    <p class="card-text">Full list of the employees in our team</p>
+                    <a class="btn btn-secondary" asp-area="" asp-controller="User" asp-action="Index">To list...</a>
+                </div>
+            </div>
+        }
+        <div class="card">
+            <img class="card-img-top" src="/images/customers.jpg" height="250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Customers</h5>
+                <p class="card-text">Full list of our customers</p>
+                <a class="btn btn-secondary" asp-area="" asp-controller="Customers" asp-action="All">To list...</a>
+            </div>
+        </div>
+
+    }
+</div>
+<div class="card-group">
+    @if (User.IsInRole(Doctor))
+    {
+        <div class="card">
+            <img class="card-img-top" src="/images/operating_card.jpg" height="250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Operating cards</h5>
+                <p class="card-text">Full list of operating cards</p>
+                <a class="btn btn-secondary" asp-area="" asp-controller="OperatingCards" asp-action="All">To list...</a>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="/images/storage.jpg" height="250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Storage</h5>
+                <p class="card-text">Full list of all spare parts in our storage</p>
+                <a class="btn btn-secondary" asp-area="" asp-controller="Parts" asp-action="All">To list...</a>
+            </div>
+        </div>
+    }
+</div>
+

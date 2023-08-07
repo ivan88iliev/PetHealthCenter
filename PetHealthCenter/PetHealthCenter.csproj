@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-RepairShopStudio-F682FDCB-D9FA-472D-98D9-4118F3879ED3</UserSecretsId>
+    <UserSecretsId>aspnet-PetHealthCenter-F682FDCB-D9FA-472D-98D9-4118F3879ED3</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PetHealthCenter.Core\PetHealthCenter.Core.csproj" />
-    <ProjectReference Include="..\RepairShopStudio.Core\PetHealthCenter.Core.csproj" />
   </ItemGroup>
 
 </Project>

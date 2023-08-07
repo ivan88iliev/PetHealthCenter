@@ -2,53 +2,55 @@
 using System.ComponentModel.DataAnnotations;
 using static PetHealthCenter.Common.Constants.ModelConstraintConstants.Customer;
 using static PetHealthCenter.Common.Constants.ModelConstraintConstants.Common;
+using static PetHealthCenter.Common.Constants.DbModelCommentConstants.Customer;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PetHealthCenter.Infrastructure.Data.Models
 {
-    [Comment("Customer information")]
+    [Comment(CustomerMain)]
     public class Customer
     {
         [Key]
-        [Comment("Customer Id")]
-        public Guid Id { get; set; }
+        [Comment(CustomerId)]
+        public int Id { get; set; }
 
         [Required]
         [StringLength(CustomerNameMaxLength)]
-        [Comment("Name of the customer")]
+        [Comment(CustomerName)]
         public string Name { get; set; } = null!;
 
         [Required]
         [Phone]
         [StringLength(PhoneNumberMaxLength)]
-        [Comment("Phone number of the cusotmer")]
+        [Comment(CustomerPhoneNumber)]
         public string PhoneNumber { get; set; } = null!;
 
         [Required]
         [EmailAddress]
         [StringLength(EmailMaxLength)]
-        [Comment("Email of the customer")]
+        [Comment(CustomerEmail)]
         public string Email { get; set; } = null!;
 
         [Required]
-        [Comment("Defines if the customer is corporate or individual")]
+        [Comment(CustomerIsCorporate)]
         public bool IsCorporate { get; set; }
 
         [StringLength(UicMaxLength)]
-        [Comment("The Unit Identification Code of the customer's company")]
+        [Comment(CustomerUic)]
         public string Uic { get; set; } = null!;
 
-        [Comment("The address of the customer's office")]
-        public Guid AddressId { get; set; }
+        [Comment(CustomerAddressId)]
+        public int? AddressId { get; set; }
 
         [ForeignKey(nameof(AddressId))]
-        public Address Address { get; set; } = null!;
+        [Comment(CustomerAddress)]
+        public Address? Address { get; set; } = null!;
 
         [StringLength(ResponsiblePersonNameMaxLength)]
-        [Comment("Name of the responsible person of the customer's company")]
-        public string ResponsiblePerson { get; set; } = null!;
+        [Comment(CustomerResponsiblePerson)]
+        public string? ResponsiblePerson { get; set; } = null!;
 
-        [Comment("Collection of Pets, owned by the customer")]
-        public ICollection<Pet> Pet { get; set; } = new List<Pet>();
+        [Comment(CustomerPets)]
+        public ICollection<Pet> Pets { get; set; } = new List<Pet>();
     }
 }

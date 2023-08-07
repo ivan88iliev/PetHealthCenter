@@ -1,29 +1,29 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using static PetHealthCenter.Common.Constants.ModelConstraintConstants.Address;
+using static PetHealthCenter.Common.Constants.DbModelCommentConstants.Address;
 
 namespace PetHealthCenter.Infrastructure.Data.Models
 {
-    [Comment("Addres properties")]
+    [Comment(AddressMain)]
     public class Address
     {
         [Key]
-        [Comment("Id of the address")]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(AddressTextMaxLength)]
-        [Comment("Adrres text - street, number, etc.")]
+        [Comment(AddressAddressText)]
         public string AddressText { get; set; } = null!;
 
         [Required]
         [MaxLength(AddressTextMaxLength)]
-        [Comment("Town name")]
+        [Comment(AddressTownName)]
         public string TownName { get; set; } = null!;
 
         [Required]
         [MaxLength(ZipCodeMaxLength)]
-        [Comment("ZIP code of the town")]
+        [Comment(AddressZipCode)]
         public string ZipCode { get; set; } = null!;
     }
 }

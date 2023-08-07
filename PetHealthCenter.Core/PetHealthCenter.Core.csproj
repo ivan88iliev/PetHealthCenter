@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PetHealthCenter.Infrastructure\PetHealthCenter.Infrastructure.csproj" />
-    <ProjectReference Include="..\RepairShopStudio.Infrastructure\PetHealthCenter.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

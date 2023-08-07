@@ -16,3 +16,7 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.footer, .push {
+    height: 20px; /* .push must be the same height as .footer */
+}

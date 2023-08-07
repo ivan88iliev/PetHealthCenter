@@ -6,47 +6,39 @@ using System.Threading.Tasks;
 
 namespace PetHealthCenter.Common.Constants
 {
-    public class ModelConstraintConstants
+    public static class ModelConstraintConstants
     {
-        public class Common
+        public static class Common
         {
-            public const int PhoneNumberMaxLength = 15;
+            public const int PhoneNumberMaxLength = 17;
             public const int PhoneNumberMinLength = 13;
-            public const int EmailMaxLength = 110;
+            public const int EmailMaxLength = 100;
             public const int EmailMinLength = 10;
-            public const int UicMaxLength = 15;
-            public const int UicMinLength = 13;
+            public const int UicMaxLength = 12;
+            public const int UicMinLength = 12;
             public const int ResponsiblePersonNameMaxLength = 70;
             public const int ResponsiblePersonNameMinLength = 8;
             public const int DocumentNumberMaxLength = 50;
         }
-        public class HealthService
-        {
-            public const int HealthServiceNameMaxLength = 60;
-            public const int HealthServiceNameMinLength = 5;
-            public const int HealthServiceDescriptionMaxLength = 400;
-            public const int HealthServiceDescriptionMinLength = 5;
-            public const string HealthServicePriceMaxValue = "10000";
-            public const string HealthServicePriceMinValue = "0.1";
-        }
 
-        public class HealthProduct
+        public static class SparePart
         {
-            public const int HealthProductNameMaxLength = 50;
-            public const int HealthProductNameMinLength = 5;
-            public const int HealthProductManufacturerNameMaxLength = 50;
-            public const int HealthProductManufacturerNameMinLength = 5;
-            public const int HealthProductOriginalMpnMaxLength = 30;
-            public const int HealthProductOriginalMpnMinLength = 5;
-            public const int HealthProductDescriptionMaxLength = 150;
-            public const int HealthProductDescriptionMinLength = 5;
-            public const int HealthProductImageUrlMaxLength = 250;
-            public const string HealthProductPriceMaxValue = "10000";
-            public const string HealthProductPriceMinValue = "0.1";
+            public const int SparePartNameMaxLength = 50;
+            public const int SparePartNameMinLength = 5;
+            public const int SparePartManufacturerNameMaxLength = 50;
+            public const int SparePartManufacturerNameMinLength = 5;
+            public const int SparePartOriginalMpnMaxLength = 30;
+            public const int SparePartOriginalMpnMinLength = 5;
+            public const int SparePartDescriptionMaxLength = 150;
+            public const int SparePartDescriptionMinLength = 5;
+            public const int SparePartImageUrlMaxLength = 250;
+            public const int SparePartImageUrlMinLength = 20;
+            public const string SparePartPriceMaxValue = "10000";
+            public const string SparePartPriceMinValue = "0.1";
 
         }
 
-        public class Supplier
+        public static class Supplier
         {
             public const int SupplierNameMaxLength = 50;
             public const int SupplierNameMinLength = 5;
@@ -55,7 +47,7 @@ namespace PetHealthCenter.Common.Constants
 
         }
 
-        public class Address
+        public static class Address
         {
             public const int TownNameMaxLength = 50;
             public const int TownNameMinLength = 5;
@@ -65,26 +57,26 @@ namespace PetHealthCenter.Common.Constants
             public const int ZipCodeMinLength = 3;
         }
 
-        public class Pet
+        public static class Pet
         {
-            public const int PetNameMaxLength = 30;
-            public const int PetNameMinLength = 5;
-            public const int PetSpeciesMaxLength = 70;
-            public const int PetSpeciesMinLength = 1;
-            public const int AnimalIdentificationNumberMaxLength = 17;
-            public const int AnimalIdentificationNumberMinLength = 13;
-            public const int HospitalizedNumber = 17;
-            public const int PetMaxWeight = 1000;
-            public const int PetMinWeight = 1;
+            public const int PetMakeMaxLength = 30;
+            public const int PetMakeMinLength = 3;
+            public const int PetModelMaxLength = 70;
+            public const int PetModelMinLength = 1;
+            public const int IdentificationNumberMaxLength = 8;
+            public const int IdentificationNumberMinLength = 7;
+            public const int VinNumberLength = 17;
+            public const int SpecieMaxPower = 1914;
+            public const int SpecieMinPower = 1;
         }
 
-        public class Customer
+        public static class Customer
         {
-            public const int CustomerNameMaxLength = 70;
-            public const int CustomerNameMinLength = 8;
+            public const int CustomerNameMaxLength = 40;
+            public const int CustomerNameMinLength = 6;
         }
 
-        public class Employee
+        public static class Employee
         {
             public const int EmployeeNameMaxLength = 70;
             public const int EmployeeNameMinLength = 8;
@@ -95,25 +87,27 @@ namespace PetHealthCenter.Common.Constants
             public const int OrderNoteMaxLength = 200;
         }
 
-        public class MedicalComponent
+        public static class ProductComponent
         {
-            public const int MedicalComponentNameMaxLength = 50;
-            public const int MedicalComponentNameMinLength = 4;
+            public const int ProductComponentNameMaxLength = 50;
+            public const int ProductComponentNameMinLength = 4;
         }
-        public class Breed
+        public static class SpecieType
         {
-            public const int BreedTypeNameMaxLength = 10;
-            public const int BreedTypeNameMinLength = 5;
+            public const int SpecieTypeNameMaxLength = 10;
+            public const int SpecieTypeNameMinLength = 5;
         }
-        public class ApplicationUser
+        public static class ApplicationUser
         {
-            public const int ApplicationUserFirstNameMaxLength = 20;
+            public const int ApplicationUserFirstNameMaxLength = 40;
             public const int ApplicationUserFirstNameMinLength = 3;
-            public const int ApplicationUserLastNameMaxLength = 20;
+            public const int ApplicationUserLastNameMaxLength = 40;
             public const int ApplicationUserLastNameMinLength = 3;
+            public const int ApplicationUserUserNameMaxLength = 40;
+            public const int ApplicationUserUserNameMinLength = 3;
         }
 
-        public class JobTitle
+        public static class JobTitle
         {
             public const int JobTitleNameMaxLength = 20;
             public const int JobTitleNameMinLength = 5;

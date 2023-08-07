@@ -1,19 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using static PetHealthCenter.Common.Constants.ModelConstraintConstants.JobTitle;
+using static PetHealthCenter.Common.Constants.DbModelCommentConstants.JobTitle;
 
 namespace PetHealthCenter.Infrastructure.Data.Models
 {
-    [Comment("Possible job titles")]
+    [Comment(JobTitleMain)]
     public class JobTitle
     {
         [Key]
-        [Comment("Id of the job title")]
-        public Guid Id { get; set; }
+        [Comment(JobTitleId)]
+        public int Id { get; set; }
 
         [Required]
         [StringLength(JobTitleNameMaxLength)]
-        [Comment("Job title")]
+        [Comment(JobTitleName)]
         public string Name { get; set; } = null!;
     }
 }

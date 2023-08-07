@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="mt-4 p-5 bg-transparent text-center">
+    <h1 class=" display-6" >Hello, Admin!</h1>
+    <p class="lead mb-1 mt-3">
+        Here you can <b>create</b>, <b>edit</b>,
+        <b>delete</b> and <b>view details </b> of parts, services etc... .
+    </p>
+    <p class="lead mt-1">
+        You can also <b>control the profiles of all employees </b> in the system.
+    </p>
+    <hr class="my-4">
+    <p>
+        <a asp-area="Admin" asp-controller="User" asp-action="Index" class="btn btn-primary btn-lg btn-info">All Employees</a>
+        <a asp-area="Admin" asp-controller="User" asp-action="Register" class="btn btn-primary btn-lg btn-info">Add new employee</a>
+    </p>
+    <p>
+        <a asp-area="Admin" asp-controller="Parts" asp-action="Add" class="btn btn-primary btn-lg btn-danger">Add new part</a>
+        <a asp-area="Admin" asp-controller="Parts" asp-action="All" class="btn btn-primary btn-lg btn-danger">See all parts</a>
+    </p>
+    <p>
+        <a asp-area="Admin" asp-controller="Customers" asp-action="All" class="btn btn-primary btn-lg">All Customers</a>
+        <a asp-area="Admin" asp-controller="Customers" asp-action="AddRegular" class="btn btn-primary btn-lg">Add regular customer</a>
+        <a asp-area="Admin" asp-controller="Customers" asp-action="AddCorporate" class="btn btn-primary btn-lg">Add corporate customer</a>
+    </p>
+    <p>
+        <a asp-area="Admin" asp-controller="OperatingCards" asp-action="All" class="btn btn-primary btn-lg btn-warning">Pending operating cards</a>
+        <a asp-area="Admin" asp-controller="OperatingCards" asp-action="AllFinished" class="btn btn-primary btn-lg btn-warning">Completed operating cards</a>
+    </p>
+</div>
+
+<div class="mb-5"></div>

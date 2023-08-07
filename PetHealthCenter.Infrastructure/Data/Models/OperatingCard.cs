@@ -1,46 +1,50 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PetHealthCenter.Infrastructure.Data.Models.User;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using static PetHealthCenter.Common.Constants.ModelConstraintConstants.Common;
+using static PetHealthCenter.Common.Constants.DbModelCommentConstants.OperatingCard;
 
 namespace PetHealthCenter.Infrastructure.Data.Models
 {
-    [Comment("Operating card for the current service")]
+    [Comment(OperatingCardMain)]
     public class OperatingCard
     {
         [Key]
-        [Comment("Id of the operating card")]
-        public Guid Id { get; set; }
+        [Comment(OperatingCardId)]
+        public int Id { get; set; }
 
         [Required]
-        [Comment("Date of the creation of the document")]
+        [Comment(OperatingCardDate)]
         public DateTime Date { get; set; }
 
         [Required]
-        [Comment("The number of current document")]
+        [Comment(OperatingCardDocumentNumber)]
         [StringLength(DocumentNumberMaxLength)]
         public string DocumentNumber { get; set; } = null!;
 
-        [Required]
-        [Comment("Services, applied to current pet")]
-        ICollection<HealthService> ShopServices { get; set; } = new List<HealthService>();
+        [Comment(OperatingCardPartId)]
+        public int? PartId { get; set; }
 
-        [Required]
-        [Comment("Products, needed for current service")]
-        ICollection<Product> Products { get; set; } = new List<Product>();
+        [Comment(OperatingCardPart)]
+        public Part? Part { get; set; }
 
-        public Guid CustomerId { get; set; }
-
-        [ForeignKey(nameof(CustomerId))]
+        [Comment(OperatingCardServiceId)]
+        public int? ServiceId { get; set; }
+        [Comment(OperatingCardService)]
+        public int CustomerId { get; set; }
+        [Comment(OperatingCardCustomer)]
         public Customer? Customer { get; set; }
 
-        public Guid EmployeeId { get; set; }
+        [Comment(OperatingCardApplicationUserId)]
+        public Guid ApplicationUserId { get; set; }
+        [Comment(OperatingCardApplicationUser)]
+        public ApplicationUser? ApplicationUser { get; set; }
 
-        [ForeignKey(nameof(EmployeeId))]
-        public Employee? Employee { get; set; }
+        [Comment(OperatingCardIsActive)]
+        public bool IsActive { get; set; } = true;
 
-        [Required]
-        [Range(1.0, 100.0)]
-        public double Discount { get; set; }
+        [Comment(OperatingCardPetId)]
+        public int PetId { get; set; }
+
     }
 }

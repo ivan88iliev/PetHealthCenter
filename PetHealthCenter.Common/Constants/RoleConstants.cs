@@ -2,8 +2,9 @@
 {
     public static class RoleConstants
     {
-        public const string Manager = "Manager";
-        public const string HealthWorker = "HealthWorker";
+        public const string Administrator = "Administrator";
+        public const string Doctor = "Doctor";
         public const string ServiceAdviser = "ServiceAdviser";
     }
+
 }

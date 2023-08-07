@@ -1013,12 +1013,12 @@
 
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v5.1.0): dom/selector-engine.js
+   * Bootstrap (v5.1.0): dom/selector-specie.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    * --------------------------------------------------------------------------
    */
   const NODE_TEXT = 3;
-  const SelectorEngine = {
+  const SelectorSpecie = {
     find(selector, element = document.documentElement) {
       return [].concat(...Element.prototype.querySelectorAll.call(element, selector));
     },
@@ -1176,7 +1176,7 @@
       this.touchStartX = 0;
       this.touchDeltaX = 0;
       this._config = this._getConfig(config);
-      this._indicatorsElement = SelectorEngine.findOne(SELECTOR_INDICATORS, this._element);
+      this._indicatorsElement = SelectorSpecie.findOne(SELECTOR_INDICATORS, this._element);
       this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
       this._pointerEvent = Boolean(window.PointerEvent);
 
@@ -1214,7 +1214,7 @@
         this._isPaused = true;
       }
 
-      if (SelectorEngine.findOne(SELECTOR_NEXT_PREV, this._element)) {
+      if (SelectorSpecie.findOne(SELECTOR_NEXT_PREV, this._element)) {
         triggerTransitionEnd(this._element);
         this.cycle(true);
       }
@@ -1241,7 +1241,7 @@
     }
 
     to(index) {
-      this._activeElement = SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element);
+      this._activeElement = SelectorSpecie.findOne(SELECTOR_ACTIVE_ITEM, this._element);
 
       const activeIndex = this._getItemIndex(this._activeElement);
 
@@ -1346,7 +1346,7 @@
         }
       };
 
-      SelectorEngine.find(SELECTOR_ITEM_IMG, this._element).forEach(itemImg => {
+      SelectorSpecie.find(SELECTOR_ITEM_IMG, this._element).forEach(itemImg => {
         EventHandler.on(itemImg, EVENT_DRAG_START, e => e.preventDefault());
       });
 
@@ -1377,7 +1377,7 @@
     }
 
     _getItemIndex(element) {
-      this._items = element && element.parentNode ? SelectorEngine.find(SELECTOR_ITEM, element.parentNode) : [];
+      this._items = element && element.parentNode ? SelectorSpecie.find(SELECTOR_ITEM, element.parentNode) : [];
       return this._items.indexOf(element);
     }
 
@@ -1389,7 +1389,7 @@
     _triggerSlideEvent(relatedTarget, eventDirectionName) {
       const targetIndex = this._getItemIndex(relatedTarget);
 
-      const fromIndex = this._getItemIndex(SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element));
+      const fromIndex = this._getItemIndex(SelectorSpecie.findOne(SELECTOR_ACTIVE_ITEM, this._element));
 
       return EventHandler.trigger(this._element, EVENT_SLIDE, {
         relatedTarget,
@@ -1401,10 +1401,10 @@
 
     _setActiveIndicatorElement(element) {
       if (this._indicatorsElement) {
-        const activeIndicator = SelectorEngine.findOne(SELECTOR_ACTIVE$1, this._indicatorsElement);
+        const activeIndicator = SelectorSpecie.findOne(SELECTOR_ACTIVE$1, this._indicatorsElement);
         activeIndicator.classList.remove(CLASS_NAME_ACTIVE$2);
         activeIndicator.removeAttribute('aria-current');
-        const indicators = SelectorEngine.find(SELECTOR_INDICATOR, this._indicatorsElement);
+        const indicators = SelectorSpecie.find(SELECTOR_INDICATOR, this._indicatorsElement);
 
         for (let i = 0; i < indicators.length; i++) {
           if (Number.parseInt(indicators[i].getAttribute('data-bs-slide-to'), 10) === this._getItemIndex(element)) {
@@ -1417,7 +1417,7 @@
     }
 
     _updateInterval() {
-      const element = this._activeElement || SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element);
+      const element = this._activeElement || SelectorSpecie.findOne(SELECTOR_ACTIVE_ITEM, this._element);
 
       if (!element) {
         return;
@@ -1436,7 +1436,7 @@
     _slide(directionOrOrder, element) {
       const order = this._directionToOrder(directionOrOrder);
 
-      const activeElement = SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element);
+      const activeElement = SelectorSpecie.findOne(SELECTOR_ACTIVE_ITEM, this._element);
 
       const activeElementIndex = this._getItemIndex(activeElement);
 
@@ -1611,7 +1611,7 @@
 
   EventHandler.on(document, EVENT_CLICK_DATA_API$5, SELECTOR_DATA_SLIDE, Carousel.dataApiClickHandler);
   EventHandler.on(window, EVENT_LOAD_DATA_API$2, () => {
-    const carousels = SelectorEngine.find(SELECTOR_DATA_RIDE);
+    const carousels = SelectorSpecie.find(SELECTOR_DATA_RIDE);
 
     for (let i = 0, len = carousels.length; i < len; i++) {
       Carousel.carouselInterface(carousels[i], Carousel.getInstance(carousels[i]));
@@ -1676,12 +1676,12 @@
       this._isTransitioning = false;
       this._config = this._getConfig(config);
       this._triggerArray = [];
-      const toggleList = SelectorEngine.find(SELECTOR_DATA_TOGGLE$4);
+      const toggleList = SelectorSpecie.find(SELECTOR_DATA_TOGGLE$4);
 
       for (let i = 0, len = toggleList.length; i < len; i++) {
         const elem = toggleList[i];
         const selector = getSelectorFromElement(elem);
-        const filterElement = SelectorEngine.find(selector).filter(foundElem => foundElem === this._element);
+        const filterElement = SelectorSpecie.find(selector).filter(foundElem => foundElem === this._element);
 
         if (selector !== null && filterElement.length) {
           this._selector = selector;
@@ -1728,11 +1728,11 @@
       let activesData;
 
       if (this._config.parent) {
-        const children = SelectorEngine.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
-        actives = SelectorEngine.find(SELECTOR_ACTIVES, this._config.parent).filter(elem => !children.includes(elem)); // remove children if greater depth
+        const children = SelectorSpecie.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
+        actives = SelectorSpecie.find(SELECTOR_ACTIVES, this._config.parent).filter(elem => !children.includes(elem)); // remove children if greater depth
       }
 
-      const container = SelectorEngine.findOne(this._selector);
+      const container = SelectorSpecie.findOne(this._selector);
 
       if (actives.length) {
         const tempActiveData = actives.find(elem => container !== elem);
@@ -1866,8 +1866,8 @@
         return;
       }
 
-      const children = SelectorEngine.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
-      SelectorEngine.find(SELECTOR_DATA_TOGGLE$4, this._config.parent).filter(elem => !children.includes(elem)).forEach(element => {
+      const children = SelectorSpecie.find(`.${CLASS_NAME_COLLAPSE} .${CLASS_NAME_COLLAPSE}`, this._config.parent);
+      SelectorSpecie.find(SELECTOR_DATA_TOGGLE$4, this._config.parent).filter(elem => !children.includes(elem)).forEach(element => {
         const selected = getElementFromSelector(element);
 
         if (selected) {
@@ -1928,7 +1928,7 @@
     }
 
     const selector = getSelectorFromElement(this);
-    const selectorElements = SelectorEngine.find(selector);
+    const selectorElements = SelectorSpecie.find(selector);
     selectorElements.forEach(element => {
       Collapse.getOrCreateInstance(element, {
         toggle: false
@@ -2181,7 +2181,7 @@
     }
 
     _getMenuElement() {
-      return SelectorEngine.next(this._element, SELECTOR_MENU)[0];
+      return SelectorSpecie.next(this._element, SELECTOR_MENU)[0];
     }
 
     _getPlacement() {
@@ -2257,7 +2257,7 @@
       key,
       target
     }) {
-      const items = SelectorEngine.find(SELECTOR_VISIBLE_ITEMS, this._menu).filter(isVisible);
+      const items = SelectorSpecie.find(SELECTOR_VISIBLE_ITEMS, this._menu).filter(isVisible);
 
       if (!items.length) {
         return;
@@ -2290,7 +2290,7 @@
         return;
       }
 
-      const toggles = SelectorEngine.find(SELECTOR_DATA_TOGGLE$3);
+      const toggles = SelectorSpecie.find(SELECTOR_DATA_TOGGLE$3);
 
       for (let i = 0, len = toggles.length; i < len; i++) {
         const context = Dropdown.getInstance(toggles[i]);
@@ -2358,7 +2358,7 @@
         return;
       }
 
-      const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$3) ? this : SelectorEngine.prev(this, SELECTOR_DATA_TOGGLE$3)[0];
+      const getToggleButton = this.matches(SELECTOR_DATA_TOGGLE$3) ? this : SelectorSpecie.prev(this, SELECTOR_DATA_TOGGLE$3)[0];
       const instance = Dropdown.getOrCreateInstance(getToggleButton);
 
       if (event.key === ESCAPE_KEY$2) {
@@ -2500,7 +2500,7 @@
       if (isElement(selector)) {
         callBack(selector);
       } else {
-        SelectorEngine.find(selector, this._element).forEach(callBack);
+        SelectorSpecie.find(selector, this._element).forEach(callBack);
       }
     }
 
@@ -2708,7 +2708,7 @@
         return;
       }
 
-      const elements = SelectorEngine.focusableChildren(trapElement);
+      const elements = SelectorSpecie.focusableChildren(trapElement);
 
       if (elements.length === 0) {
         trapElement.focus();
@@ -2792,7 +2792,7 @@
     constructor(element, config) {
       super(element);
       this._config = this._getConfig(config);
-      this._dialog = SelectorEngine.findOne(SELECTOR_DIALOG, this._element);
+      this._dialog = SelectorSpecie.findOne(SELECTOR_DIALOG, this._element);
       this._backdrop = this._initializeBackDrop();
       this._focustrap = this._initializeFocusTrap();
       this._isShown = false;
@@ -2929,7 +2929,7 @@
     _showElement(relatedTarget) {
       const isAnimated = this._isAnimated();
 
-      const modalBody = SelectorEngine.findOne(SELECTOR_MODAL_BODY, this._dialog);
+      const modalBody = SelectorSpecie.findOne(SELECTOR_MODAL_BODY, this._dialog);
 
       if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
         // Don't move modal's DOM position
@@ -3395,7 +3395,7 @@
       }
     }); // avoid conflict when clicking a toggler of an offcanvas, while another is open
 
-    const allReadyOpen = SelectorEngine.findOne(OPEN_SELECTOR);
+    const allReadyOpen = SelectorSpecie.findOne(OPEN_SELECTOR);
 
     if (allReadyOpen && allReadyOpen !== target) {
       Offcanvas.getInstance(allReadyOpen).hide();
@@ -3404,7 +3404,7 @@
     const data = Offcanvas.getOrCreateInstance(target);
     data.toggle(this);
   });
-  EventHandler.on(window, EVENT_LOAD_DATA_API$1, () => SelectorEngine.find(OPEN_SELECTOR).forEach(el => Offcanvas.getOrCreateInstance(el).show()));
+  EventHandler.on(window, EVENT_LOAD_DATA_API$1, () => SelectorSpecie.find(OPEN_SELECTOR).forEach(el => Offcanvas.getOrCreateInstance(el).show()));
   enableDismissTrigger(Offcanvas);
   /**
    * ------------------------------------------------------------------------
@@ -3874,7 +3874,7 @@
     }
 
     _sanitizeAndSetContent(template, content, selector) {
-      const templateElement = SelectorEngine.findOne(selector, template);
+      const templateElement = SelectorSpecie.findOne(selector, template);
 
       if (!content && templateElement) {
         templateElement.remove();
@@ -4415,10 +4415,10 @@
       this._offsets = [];
       this._targets = [];
       this._scrollHeight = this._getScrollHeight();
-      const targets = SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target);
+      const targets = SelectorSpecie.find(SELECTOR_LINK_ITEMS, this._config.target);
       targets.map(element => {
         const targetSelector = getSelectorFromElement(element);
-        const target = targetSelector ? SelectorEngine.findOne(targetSelector) : null;
+        const target = targetSelector ? SelectorSpecie.findOne(targetSelector) : null;
 
         if (target) {
           const targetBCR = target.getBoundingClientRect();
@@ -4508,19 +4508,19 @@
       this._clear();
 
       const queries = SELECTOR_LINK_ITEMS.split(',').map(selector => `${selector}[data-bs-target="${target}"],${selector}[href="${target}"]`);
-      const link = SelectorEngine.findOne(queries.join(','), this._config.target);
+      const link = SelectorSpecie.findOne(queries.join(','), this._config.target);
       link.classList.add(CLASS_NAME_ACTIVE$1);
 
       if (link.classList.contains(CLASS_NAME_DROPDOWN_ITEM)) {
-        SelectorEngine.findOne(SELECTOR_DROPDOWN_TOGGLE$1, link.closest(SELECTOR_DROPDOWN$1)).classList.add(CLASS_NAME_ACTIVE$1);
+        SelectorSpecie.findOne(SELECTOR_DROPDOWN_TOGGLE$1, link.closest(SELECTOR_DROPDOWN$1)).classList.add(CLASS_NAME_ACTIVE$1);
       } else {
-        SelectorEngine.parents(link, SELECTOR_NAV_LIST_GROUP$1).forEach(listGroup => {
+        SelectorSpecie.parents(link, SELECTOR_NAV_LIST_GROUP$1).forEach(listGroup => {
           // Set triggered links parents as active
           // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
-          SelectorEngine.prev(listGroup, `${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`).forEach(item => item.classList.add(CLASS_NAME_ACTIVE$1)); // Handle special case when .nav-link is inside .nav-item
+          SelectorSpecie.prev(listGroup, `${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`).forEach(item => item.classList.add(CLASS_NAME_ACTIVE$1)); // Handle special case when .nav-link is inside .nav-item
 
-          SelectorEngine.prev(listGroup, SELECTOR_NAV_ITEMS).forEach(navItem => {
-            SelectorEngine.children(navItem, SELECTOR_NAV_LINKS).forEach(item => item.classList.add(CLASS_NAME_ACTIVE$1));
+          SelectorSpecie.prev(listGroup, SELECTOR_NAV_ITEMS).forEach(navItem => {
+            SelectorSpecie.children(navItem, SELECTOR_NAV_LINKS).forEach(item => item.classList.add(CLASS_NAME_ACTIVE$1));
           });
         });
       }
@@ -4531,7 +4531,7 @@
     }
 
     _clear() {
-      SelectorEngine.find(SELECTOR_LINK_ITEMS, this._config.target).filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1)).forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
+      SelectorSpecie.find(SELECTOR_LINK_ITEMS, this._config.target).filter(node => node.classList.contains(CLASS_NAME_ACTIVE$1)).forEach(node => node.classList.remove(CLASS_NAME_ACTIVE$1));
     } // Static
 
 
@@ -4560,7 +4560,7 @@
 
 
   EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
-    SelectorEngine.find(SELECTOR_DATA_SPY).forEach(spy => new ScrollSpy(spy));
+    SelectorSpecie.find(SELECTOR_DATA_SPY).forEach(spy => new ScrollSpy(spy));
   });
   /**
    * ------------------------------------------------------------------------
@@ -4628,7 +4628,7 @@
 
       if (listElement) {
         const itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE;
-        previous = SelectorEngine.find(itemSelector, listElement);
+        previous = SelectorSpecie.find(itemSelector, listElement);
         previous = previous[previous.length - 1];
       }
 
@@ -4663,7 +4663,7 @@
 
 
     _activate(element, container, callback) {
-      const activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? SelectorEngine.find(SELECTOR_ACTIVE_UL, container) : SelectorEngine.children(container, SELECTOR_ACTIVE);
+      const activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? SelectorSpecie.find(SELECTOR_ACTIVE_UL, container) : SelectorSpecie.children(container, SELECTOR_ACTIVE);
       const active = activeElements[0];
       const isTransitioning = callback && active && active.classList.contains(CLASS_NAME_FADE$1);
 
@@ -4681,7 +4681,7 @@
     _transitionComplete(element, active, callback) {
       if (active) {
         active.classList.remove(CLASS_NAME_ACTIVE);
-        const dropdownChild = SelectorEngine.findOne(SELECTOR_DROPDOWN_ACTIVE_CHILD, active.parentNode);
+        const dropdownChild = SelectorSpecie.findOne(SELECTOR_DROPDOWN_ACTIVE_CHILD, active.parentNode);
 
         if (dropdownChild) {
           dropdownChild.classList.remove(CLASS_NAME_ACTIVE);
@@ -4714,7 +4714,7 @@
         const dropdownElement = element.closest(SELECTOR_DROPDOWN);
 
         if (dropdownElement) {
-          SelectorEngine.find(SELECTOR_DROPDOWN_TOGGLE, dropdownElement).forEach(dropdown => dropdown.classList.add(CLASS_NAME_ACTIVE));
+          SelectorSpecie.find(SELECTOR_DROPDOWN_TOGGLE, dropdownElement).forEach(dropdown => dropdown.classList.add(CLASS_NAME_ACTIVE));
         }
 
         element.setAttribute('aria-expanded', true);

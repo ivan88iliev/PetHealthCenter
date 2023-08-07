@@ -3,50 +3,52 @@ using System.ComponentModel.DataAnnotations;
 using static PetHealthCenter.Common.Constants.ModelConstraintConstants.Supplier;
 using static PetHealthCenter.Common.Constants.ModelConstraintConstants.Common;
 using System.ComponentModel.DataAnnotations.Schema;
+using static PetHealthCenter.Common.Constants.DbModelCommentConstants.Supplier;
 
 namespace PetHealthCenter.Infrastructure.Data.Models
 {
-    [Comment("Supplier, who delivers parts to the repair shop")]
+    [Comment(SupplierMain)]
     public class Supplier
     {
         [Key]
-        [Comment("Id of the supplier")]
-        public Guid Id { get; set; }
+        [Comment(SupplierId)]
+        public int Id { get; set; }
 
         [Required]
         [StringLength(SupplierNameMaxLength)]
-        [Comment("Name of the supplier")]
+        [Comment(SupplierName)]
         public string Name { get; set; } = null!;
 
         [Required]
         [StringLength(SupplierCompanyNameMaxLength)]
-        [Comment("Name of the supplier's company")]
+        [Comment(SupplierCompanyName)]
         public string CompanyName { get; set; } = null!;
 
         [Required]
         [StringLength(UicMaxLength)]
-        [Comment("Unit Identification Code of the supplier's company")]
+        [Comment(SupplierUic)]
         public string Uic { get; set; } = null!;
 
         [Required]
         [Phone]
         [StringLength(PhoneNumberMaxLength)]
-        [Comment("Phone number of the supplier's office")]
+        [Comment(SupplierPhoneNumber)]
         public string PhoneNumber { get; set; } = null!;
 
         [Required]
         [EmailAddress]
         [StringLength(EmailMaxLength)]
-        [Comment("Email of the supplier")]
+        [Comment(SupplierEmail)]
         public string Email { get; set; } = null!;
 
-        [Comment("Collection of products, selled by the supplier")]
-        public ICollection<SupplierMedicalComponent> SupplierProducts { get; set; } = new List<SupplierMedicalComponent>();
+        [Comment(SupplierSupplierSpareParts)]
+        public ICollection<SupplierSparePart> SupplierSpareParts { get; set; } = new List<SupplierSparePart>();
 
-        [Comment("Address of the supplier's office")]
-        public Guid AddressId { get; set; }
+        [Comment(SupplierAddressId)]
+        public int AddressId { get; set; }
 
         [ForeignKey(nameof(AddressId))]
+        [Comment(SupplierAddress)]
         public Address Address { get; set; } = null!;
     }
 }
