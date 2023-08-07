@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PetHealthCenter.Core\PetHealthCenter.Core.csproj" />
     <ProjectReference Include="..\RepairShopStudio.Core\PetHealthCenter.Core.csproj" />
   </ItemGroup>
 

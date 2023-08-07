@@ -12,8 +12,8 @@ using PetHealthCenter.Infrastructure.Data;
 namespace PetHealthCenter.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230716130624_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20230806082807_InitialPethelthCenter")]
+    partial class InitialPethelthCenter
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
