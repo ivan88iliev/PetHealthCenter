@@ -9,6 +9,13 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class PetHealthCenterApiServiceCollectionExtension
     {
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        {
+            services.AddScoped<IStatisticsService, StatisticsService>();
+            services.AddScoped<IGuard, Guard>();
+
+            return services;
+        }
 
         public static IServiceCollection AddPetHealthDbContext(this IServiceCollection services, IConfiguration config)
         {

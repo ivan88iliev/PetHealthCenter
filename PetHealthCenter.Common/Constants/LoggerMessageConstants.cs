@@ -15,6 +15,7 @@ namespace PetHealthCenter.Common.Constants
         public const string NullCustomer = "Customer cannot be null";
         public const string NullUser = "User cannot be null";
         public const string NullPart = "Part cannot be null";
+        public const string NullHealthService = "Part cannot be null";
         public const string NullPet = "Pet cannot be null";
         public const string NullOperatingCard = "Operating card cannot be null";
         public const string GetDataUnsuccessfull = "Something went wrong while executing method to collect data from data-base.";

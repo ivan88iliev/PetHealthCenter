@@ -14,6 +14,7 @@ namespace PetHealthCenter.Core.Contracts
         Task<IEnumerable<Pet>> GetCustomerPets(int customerId);
         Task<string> GetCustomerNameById(int cutomerId);
         Task<IEnumerable<Part>> GetPartsAsync();
+        Task<IEnumerable<HealthService>> GetHealthServicesAsync();
         Task MarkRepairAsFinishedAsync(int cardId, string userId);
         Task<IEnumerable<OperatingCardViewModel>> GetAllFinishedAsync();
     }

@@ -24,6 +24,14 @@
             </div>
         }
         <div class="card">
+            <img class="card-img-top" src="/images/service.jpg" height="250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Health services</h5>
+                <p class="card-text">Full list of our services</p>
+                <a class="btn btn-secondary" asp-area="" asp-controller="HealthServices" asp-action="All">To list...</a>
+            </div>
+        </div>
+        <div class="card">
             <img class="card-img-top" src="/images/customers.jpg" height="250" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Customers</h5>
@@ -54,5 +62,47 @@
             </div>
         </div>
     }
+    @if (User.IsInRole(ServiceAdviser))
+    {
+        <div class="card">
+            <img class="card-img-top" src="/images/statistics.jpg" height="250" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Statistics</h5>
+                <p class="card-text">See some statistics here</p>
+                <a class="btn btn-secondary" id="statistics-button">Show Statistics</a>
+            </div>
+        </div>
+    }
 </div>
+
+
+<div class="mt-4 p-5 bg-light d-none" id="statistics">
+    <div class="row">
+        <h2 class="col-md-4 text-center" id="total-parts"></h2>
+    </div>
+    <div class="row">
+        <h2 class="col-md-4 text-center" id="total-services"></h2>
+    </div>
+    <div class="row">
+        <h2 class="col-md-4 text-center" id="total-customers"></h2>
+    </div>
+    <div class="row">
+        <h2 class="col-md-4 text-center" id="total-operating-cards"></h2>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('#statistics-button').on('click', ev => {
+            $.get('https://localhost:7244/api/statistics', (data) => {
+                $('#total-parts').text(data.totalParts + " parts");
+                $('#total-services').text(data.totalServices + " services");
+                $('#total-customers').text(data.totalCustomers + " customers");
+                $('#total-operating-cards').text(data.totalOperatingCards + " operating cards");
+                $('#statistics').removeClass('d-none');
+                $('#statistics-button').hide();
+            });
+        });
+    </script>
+}
 

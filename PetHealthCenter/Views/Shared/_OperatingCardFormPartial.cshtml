@@ -39,7 +39,18 @@
                     }
                 </select>
                 <span asp-validation-for="PartId" class="text-danger"></span>
-            </div>n asp-validation-for="ServiceId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.ServiceId" class="form-label">Service</label>
+                <select asp-for="@Model.ServiceId" class="form-control">
+                    @foreach (var service in Model.HealthServices)
+                    {
+
+                        <option value="@service.Id">@service.Name</option>
+
+                    }
+                </select>
+                <span asp-validation-for="ServiceId" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="@Model.IssueDate" class="mb-0">Date:<b> @DateTime.Today.ToString("dd.MM.yyyy")</b></label>

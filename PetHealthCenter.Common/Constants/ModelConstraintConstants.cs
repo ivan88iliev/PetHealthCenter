@@ -20,6 +20,15 @@ namespace PetHealthCenter.Common.Constants
             public const int ResponsiblePersonNameMinLength = 8;
             public const int DocumentNumberMaxLength = 50;
         }
+        public static class HealthService
+        {
+            public const int RepairServiceNameMaxLength = 60;
+            public const int RepairServiceNameMinLength = 5;
+            public const int RepairServiceDescriptionMaxLength = 400;
+            public const int RepairServiceDescriptionMinLength = 5;
+            public const string HealthServicePriceMaxValue = "10000";
+            public const string HealthServicePriceMinValue = "0.1";
+        }
 
         public static class SparePart
         {

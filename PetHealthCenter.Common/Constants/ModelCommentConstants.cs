@@ -55,6 +55,7 @@
             public const string AddViewModelPartId = "The id of the part, used to perform the service";
             public const string AddViewModelParts = "Collection of all parts in storage, that can be used to perform the services";
             public const string AddViewModelServiceId = "The id of the service";
+            public const string AddViewModelHealthServices = "Collection of all survices, that can be performed";
             public const string AddViewModelIssueDate = "Date of creation of the document";
             public const string AddViewModelIsActive = "Property that defines if the operating card is active";
 
@@ -131,6 +132,46 @@
             public const string ViewModelProductComponent = "Name of product component";
             public const string ViewModelProductComponents = "Collection of all product components";
         }
+
+        public static class HealthService
+        {
+            public const string AddViewModelMain = "Model, used to add new health service";
+            public const string AddViewModelName = "Name of the service";
+            public const string AddViewModelDescription = "Description of the service";
+            public const string AddViewModelPrice = "Price of the service";
+            public const string AddViewModelProductComponentId = "The id of the affected product component";
+            public const string AddViewModelProductComponents = "Collection of all product components";
+
+            public const string DetailsViewModelMain = "Model, used to edit the health service";
+            public const string DetailsViewModelId = "The id of the service";
+            public const string DetailsViewModelName = "Name of the service";
+            public const string DetailsViewModelDescription = "Description of the service";
+            public const string DetailsViewModelPrice = "Price of the service";
+            public const string DetailsViewModelProductComponent = "Affected part of the animal";
+
+            public const string ProductComponentViewModelMain = "Model,used to to view service's animal model details";
+            public const string ProductComponentViewModelId = "The id of the product component";
+            public const string ProductComponentViewModelName = "The name of the product component";
+
+            public const string ServiceViewModelmain = "Model, used to view health service details";
+            public const string ServiceViewModelId = "The Id of the health service";
+            public const string ServiceViewModelName = "Name of the service";
+            public const string ServiceViewModelDescription = "Description of the service";
+            public const string ServiceViewModelPrice = "Price of the service";
+            public const string ServiceViewModelProductComponentId = "The Id of the product component affected";
+            public const string ServiceViewModelProductComponent = "Name of product component";
+            public const string ServiceViewModelProductComponents = "Collection of all product components";
+        }
+
+        public static class Statistics
+        {
+            public const string ServiceViewModelMain = "Model, used to generate statistics";
+            public const string ServiceViewModelTotalParts = "Propery for the count of all of the parts into the storage";
+            public const string ServiceViewModelTotalServices = "Propery for the count of all of the services";
+            public const string ServiceViewModelTotalCustomers = "Propery for the count of all of the customers";
+            public const string ServiceViewModelTotalOpeartingCards = "Propery for the count of all of the operating cards";
+        }
+
         public static class User
         {
             public const string EditViewModelMain = "Model, used to edit the user";

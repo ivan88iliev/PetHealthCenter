@@ -17,6 +17,7 @@ namespace PetHealthCenter.Extensions
             services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IPartService, PartService>();
+            services.AddScoped<IHealthServiceService, HealthServiceService>();
             services.AddScoped<IGuard, Guard>();
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IOperatingCardService, OperatingCardService>();

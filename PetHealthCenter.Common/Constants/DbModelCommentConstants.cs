@@ -97,6 +97,19 @@
             public const string PartIsActive = "Property that defines if the part is active";
         }
 
+        public static class HealthService
+        {
+            public const string HealthServiceMain = "Services, offered by pet health center";
+            public const string HealthServiceId = "The Id of the health service";
+            public const string HealthServiceName = "Name of the service";
+            public const string HealthServiceDescription = "Description of the service";
+            public const string HealthServicePrice = "Price of the service";
+            public const string HealthServiceProductComponentId = "The Id of the affected part of the animal";
+            public const string HealthServiceProductComponent = "Affected part of the animal";
+            public const string HealthServiceParts = "Collection of spare parts needed for the service";
+            public const string HealthServiceIsActive = "Property that defines if the service is active";
+        }
+
         public static class Supplier
         {
             public const string SupplierMain = "Supplier, who delivers parts to the pet health center";
@@ -137,6 +150,11 @@
         public static class OperatingCardParts
         {
             public const string OperatingCardPartsMain = "Mapping entity between OperatingCards and Parts entities";
+        }
+
+        public static class OperatingCardHealthService
+        {
+            public const string OperatingCardHealthServiceMain = "Mapping entity between OperatingCards and HealthServices entities";
         }
 
         public static class SupplierSparePart

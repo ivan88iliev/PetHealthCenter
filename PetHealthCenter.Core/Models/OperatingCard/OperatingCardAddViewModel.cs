@@ -49,6 +49,10 @@ namespace PetHealthCenter.Core.Models.OperatingCard
         [Comment(AddViewModelServiceId)]
         public int ServiceId { get; set; }
 
+        [Comment(AddViewModelHealthServices)]
+        public IEnumerable<Infrastructure.Data.Models.HealthService> HealthServices { get; set; } 
+            = new List<Infrastructure.Data.Models.HealthService>();
+
         [Comment(AddViewModelIssueDate)]
         public DateTime? IssueDate { get; set; }
 

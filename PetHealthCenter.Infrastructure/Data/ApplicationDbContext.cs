@@ -19,6 +19,7 @@ namespace PetHealthCenter.Infrastructure.Data
         public DbSet<SpecieType> SpecieTypes { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Part> Parts { get; set; }
+        public DbSet<HealthService> HealthServices { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Pet> Pets { get; set; }
         public DbSet<ProductComponent> ProductComponents { get; set; }
@@ -32,6 +33,7 @@ namespace PetHealthCenter.Infrastructure.Data
             builder.ApplyConfiguration(new JobTItleConfiguration());
             builder.ApplyConfiguration(new AddressConfiguration());
             builder.ApplyConfiguration(new SpecieTypeConfiguration());
+            builder.ApplyConfiguration(new HealthServiceConfiguration());
             builder.ApplyConfiguration(new CustomerConfiguration());
             builder.ApplyConfiguration(new PetConfiguration());
             builder.ApplyConfiguration(new SupplierConfiguration());
@@ -73,6 +75,9 @@ namespace PetHealthCenter.Infrastructure.Data
 
             builder.Entity<OperatingCardParts>()
                 .HasKey(x => new { x.OperatingCardId, x.PartId });
+
+            builder.Entity<OperatingCardHealthService>()
+               .HasKey(x => new { x.OperatingCardId, x.HealthServiceId });
 
             builder.Entity<Customer>()
                 .Property(p => p.AddressId)

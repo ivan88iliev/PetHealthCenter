@@ -31,6 +31,9 @@ namespace PetHealthCenter.Infrastructure.Data.Models
         [Comment(OperatingCardServiceId)]
         public int? ServiceId { get; set; }
         [Comment(OperatingCardService)]
+        public HealthService? Service { get; set; }
+
+        [Comment(OperatingCardCustomerId)]
         public int CustomerId { get; set; }
         [Comment(OperatingCardCustomer)]
         public Customer? Customer { get; set; }

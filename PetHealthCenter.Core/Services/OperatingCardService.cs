@@ -223,6 +223,23 @@ namespace PetHealthCenter.Core.Services
         }
 
         /// <summary>
+        /// Get all health services from Data-Base
+        /// </summary>
+        /// <returns>List of all health services</returns>
+        public async Task<IEnumerable<HealthService>> GetHealthServicesAsync()
+        {
+            var result = await context.HealthServices.ToListAsync();
+
+            if (result == null)
+            {
+                logger.LogError(GetDataUnsuccessfull);
+                throw new InvalidOperationException(InvalidGetHealthServicesException);
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Check if the curren user is the same as the doctor with assigned certain operating card, set the card's status to complete and removes 1ps of the part from the Data-Base
         /// </summary>
         /// <param name="cardId"></param>
