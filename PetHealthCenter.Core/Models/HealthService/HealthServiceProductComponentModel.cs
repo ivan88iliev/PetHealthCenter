@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
+using static PetHealthCenter.Common.Constants.ModelCommentConstants.HealthService;
 
 namespace PetHealthCenter.Core.Models.HealthService
 {
-    internal class HealthServiceProductComponentModel
+    [Comment(ProductComponentViewModelMain)]
+    public class HealthServiceProductComponentModel
     {
+        [Comment(ProductComponentViewModelId)]
+        public int Id { get; set; }
+
+        [Comment(ProductComponentViewModelName)]
+        public string Name { get; set; } = null!;
     }
 }

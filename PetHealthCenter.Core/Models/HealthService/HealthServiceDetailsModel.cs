@@ -16,5 +16,11 @@ namespace PetHealthCenter.Core.Models.HealthService
 
         [Comment(DetailsViewModelDescription)]
         public string Description { get; set; } = null!;
+
+        [Comment(DetailsViewModelPrice)]
+        public decimal Price { get; set; }
+
+        [Comment(DetailsViewModelProductComponent)]
+        public string ProductComponent { get; set; } = null!;
     }
 }
