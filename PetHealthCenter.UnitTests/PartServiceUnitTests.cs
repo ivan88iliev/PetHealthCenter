@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetHealthCenter.UnitTests
 {
-    internal class OperatingCardServiceUnitTests
+    internal class PartServiceUnitTests
     {
     }
 }
