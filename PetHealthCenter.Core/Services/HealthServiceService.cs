@@ -127,6 +127,46 @@ namespace PetHealthCenter.Core.Services
         }
 
         /// <summary>
+        /// Get all health services from Data-Base
+        /// </summary>
+        /// <returns>List of all health services</returns>
+        public async Task<IEnumerable<HealthServiceViewModel>> GetAllAsync()
+        {
+            var entities = await context.HealthServices
+                .Where(s => s.IsActive)
+                .Include(s => s.ProductComponent)
+                .ToListAsync();
+
+            if (entities == null)
+            {
+                logger.LogError(GetDataUnsuccessfull);
+                throw new NullReferenceException(InvalidGetServicesException);
+            }
+
+            return entities
+                .Select(p => new HealthServiceViewModel
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Price = p.Price,
+                    Description = p.Description,
+                    ProductComponent = p.ProductComponent.Name
+                });
+
+
+        }
+
+        /// <summary>
+        /// Get a certain product component by a service's Id
+        /// </summary>
+        /// <param name="serviceId"></param>
+        /// <returns>Pet compnonent's Id</returns>
+        public async Task<int> GetProductComponentId(int serviceId)
+        {
+            return (await repo.GetByIdAsync<HealthService>(serviceId)).ProductComponentId;
+        }
+
+        /// <summary>
         /// Get all product components from Data-Base
         /// </summary>
         /// <returns>List of all product components</returns>
