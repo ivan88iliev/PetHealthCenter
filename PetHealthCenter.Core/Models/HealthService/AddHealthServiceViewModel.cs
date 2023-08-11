@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using static PetHealthCenter.Common.Constants.ModelConstraintConstants.HealthService;
 using static PetHealthCenter.Common.Constants.ModelCommentConstants.HealthService;
 using static PetHealthCenter.Common.Constants.ViewModelErrorMessageConstatns;
+using System.Diagnostics.CodeAnalysis;
 
 namespace PetHealthCenter.Core.Models.HealthService
 {
@@ -19,7 +20,7 @@ namespace PetHealthCenter.Core.Models.HealthService
         public string Name { get; set; } = null!;
 
         [Comment(AddViewModelDescription)]
-        [StringLength(
+        [StringLength (
             RepairServiceDescriptionMaxLength, MinimumLength = RepairServiceDescriptionMinLength, ErrorMessage = ServiceDescriptionLength)]
         public string Description { get; set; } = null!;
 

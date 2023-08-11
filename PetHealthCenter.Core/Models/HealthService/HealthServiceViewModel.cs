@@ -28,7 +28,7 @@ namespace PetHealthCenter.Core.Models.HealthService
         public string ProductComponent { get; set; } = null!;
 
         [Comment(ServiceViewModelProductComponents)]
-        public IEnumerable<HealthServiceProductComponentModel> ProductComponents { get; set; }
+        public IEnumerable<HealthServiceProductComponentModel> ProductComponents { get; set; } 
             = new List<HealthServiceProductComponentModel>();
     }
 }
