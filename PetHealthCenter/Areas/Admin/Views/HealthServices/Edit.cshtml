@@ -1,0 +1,14 @@
+﻿@model HealthServiceViewModel
+
+@{
+    ViewBag.Title = "Edit service";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<partial name="_HealthServiceFormPartial" model="@Model" />
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

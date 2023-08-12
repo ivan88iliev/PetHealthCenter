@@ -1,13 +1,13 @@
-# RepairShopStudio
+# PetHealthCenter
 
-Repair Shop Studio is a mockup application designed to help managing small vehicle repair shops.
+Pet Health Center is a mockup application designed to help managing small veterinary facility.
 
 > The application allows to operate with:
 ```
-> * Customers (corporate and regular) with their vehicles
-> * Shop services
-> * Spare parts in a storage
-> * Operating cards (document conaining information about a certain repair or service)
+> * Customers (corporate and regular) with their pets
+> * Health services
+> * Medical products in a storage
+> * Operating cards (document conaining information about a certain procedures or service)
 ```
 
 
@@ -17,20 +17,20 @@ Repair Shop Studio is a mockup application designed to help managing small vehic
 ** Roles and authorization
 ```
 > * Admin (Manager)
->   - As admin, you have access to "Admin" area, where you can create, read, update and delete customers, services and parts. 
+>   - As admin, you have access to "Admin" area, where you can create, read, update and delete customers, services and medical products. 
 >   - You can create profiles of new users (employees) and you can define what role will they have and therefore what they will have access to.
 >   - You can generate operating cards
 
 > * Service adviser
->   - As Service adviser, you can create, read, update customers and parts. 
->   - You can read shop services
+>   - As Service adviser, you can create, read, update customers and medical products. 
+>   - You can read health services
 >   - You can generate and read operating cards
 >   - You can create profiles of new users (employees) and you can define what role will they have and therefore what they will have access to.
 >   - You can generate operating cards
 
-> * Mechanic
->   - As Mechanic you can read and change the status of the operating cards ("Pending" or "Completed")
->   - You can read all parts in the storage
+> * Doctor
+>   - As Doctor you can read and change the status of the operating cards ("Pending" or "Completed")
+>   - You can read all medical products in the storage
 ```
 
 
@@ -40,9 +40,9 @@ Repair Shop Studio is a mockup application designed to help managing small vehic
 >   - Username: General_Manager
 >   - Password: Manager123!
 
-> * Mechanic
->   - Username: Mechanic
->   - Password: Mechanic123!
+> * Doctor
+>   - Username: Doctor
+>   - Password: Doctor123!
 
 > * Service adviser
 >   - Username: Service_Adviser
@@ -54,11 +54,11 @@ Repair Shop Studio is a mockup application designed to help managing small vehic
 ```
 > * Data in DB
 >   - In all entities are seeded by one or two objects (depending on the quantity required to start a demo)
->   - Seeding classes are located at: RepairShopStudio.Infrastructure.Data.Configuration
+>   - Seeding classes are located at: PetHealthCenter.Infrastructure.Data.Configuration
 
 > * Roles
 >   - For each role there is seeded one instance / user
->   - Seeding method is located at: RepairShopStudio.Extensions.ApplicationBuilderExtensions
+>   - Seeding method is located at: PetHealthCenter.Extensions.ApplicationBuilderExtensions
 ```
 
 ###### This project is created for educational purposes only. 
