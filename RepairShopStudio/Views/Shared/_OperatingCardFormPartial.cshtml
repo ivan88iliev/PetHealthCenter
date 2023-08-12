@@ -1,0 +1,65 @@
+﻿@model OperatingCardAddViewModel
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form method="post">
+            <input type="hidden" asp-for="@Model.Id" />
+            <div class="mb-3">
+                <h5 class="mb-0">Customer:<b> @Model.CustomerName</b></h5>
+                
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.VehicleId" class="form-label">Vehicle</label>
+                <select asp-for="@Model.VehicleId" class="form-control">
+                    @foreach (var vehicle in Model.Vehicles)
+                    {
+                        <option value="@vehicle.Id">@vehicle.LicensePLate</option>
+                    }
+                </select>
+                <span asp-validation-for="VehicleId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.ApplicationUserId" class="form-label">Mechanic</label>
+                <select asp-for="@Model.ApplicationUserId" class="form-control">
+                    @foreach (var mechanic in Model.ApplicationUsers)
+                    {
+                        <option value="@mechanic.Id">@mechanic.FirstName @mechanic.LastName</option>
+                    }
+                </select>
+                <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.PartId" class="form-label">Part</label>
+                <select asp-for="@Model.PartId" class="form-control">
+                    @foreach (var part in Model.Parts)
+                    {
+
+                        <option value="@part.Id">@part.Name </option>
+
+                    }
+                </select>
+                <span asp-validation-for="PartId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.ServiceId" class="form-label">Service</label>
+                <select asp-for="@Model.ServiceId" class="form-control">
+                    @foreach (var service in Model.ShopServices)
+                    {
+
+                        <option value="@service.Id">@service.Name</option>
+
+                    }
+                </select>
+                <span asp-validation-for="ServiceId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.IssueDate" class="mb-0">Date:<b> @DateTime.Today.ToString("dd.MM.yyyy")</b></label>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Generate" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

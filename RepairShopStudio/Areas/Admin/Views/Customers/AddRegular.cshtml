@@ -1,0 +1,79 @@
+﻿@model CustomerAddViewModel
+
+@{
+    ViewBag.Title = "Add regular customer";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form method="post">
+            <input type="hidden" asp-for="@Model.Id" />
+            <div class="mb-3">
+                <label asp-for="@Model.Name" class="form-label">Customer's name</label>
+                <input asp-for="@Model.Name" class="form-control" aria-required="true" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.PhoneNumber" class="form-label">Phone number</label>
+                <input asp-for="@Model.PhoneNumber" class="form-control" aria-required="true" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Email" class="form-label">E-mail</label>
+                <input asp-for="@Model.Email" class="form-control" aria-required="true" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Vehicle.Make" class="form-label">Vehicle Make</label>
+                <input asp-for="@Model.Vehicle.Make" class="form-control" value="" />
+                <span asp-validation-for="@Model.Vehicle.Make" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Vehicle.Model" class="form-label">Vehicle Model</label>
+                <input asp-for="@Model.Vehicle.Model" class="form-control" value="" />
+                <span asp-validation-for="@Model.Vehicle.Model" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Vehicle.FIrstRegistration" class="form-label">First Registration</label>
+                <input asp-for="@Model.Vehicle.FIrstRegistration" class="form-control" value="" />
+                <span asp-validation-for="@Model.Vehicle.FIrstRegistration" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Vehicle.VinNumber" class="form-label">VinNumber</label>
+                <input asp-for="@Model.Vehicle.VinNumber" class="form-control" value="" />
+                <span asp-validation-for="@Model.Vehicle.VinNumber" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Vehicle.Power" class="form-label">Power</label>
+                <input asp-for="@Model.Vehicle.Power" class="form-control" value="" />
+                <span asp-validation-for="@Model.Vehicle.Power" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Vehicle.LicensePLate" class="form-label">LicensePLate</label>
+                <input asp-for="@Model.Vehicle.LicensePLate" class="form-control" value="" />
+                <span asp-validation-for="@Model.Vehicle.LicensePLate" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Vehicle.EngineTypeId" class="form-label">Engine type</label>
+                <select asp-for="@Model.Vehicle.EngineTypeId" class="form-control">
+                    @foreach (var component in Model.Vehicle.EngineTypes)
+                    {
+                        <option value="@component.Id">@component.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="@Model.Vehicle.EngineTypeId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Add customer" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

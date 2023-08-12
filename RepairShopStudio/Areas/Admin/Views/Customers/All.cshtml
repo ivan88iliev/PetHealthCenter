@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CustomerViewModel>
+
+@{
+    ViewBag.Title = "Repair shop's customers";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="text-center row">
+    @foreach (var customer in Model)
+    {
+        <div class="card col-4" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title mt-1">@customer.Name</h5>
+                <p class="mb-0"><b>Phone number:</b> @customer.PhoneNumber</p>
+                <p class="mb-0"><b>E-mail:</b> @customer.Email</p>
+                <p class="mb-0"><b>Is corporate:</b> @(customer.IsCorporate ? "✔": "❌")</p>
+                @if (customer.IsCorporate)
+                {
+                    <p class="mb-0"><b>Address:</b> @customer.Address</p>
+                    <p class="mb-0"><b>UIC:</b> @customer.Uic</p>
+                    <p class="mb-0"><b>Responsible person:</b> @customer.ResponsiblePerson</p>
+                }
+                <b>Vehicles:</b>
+                @foreach (var vehicle in customer.Vehicles)
+                {
+                    <p class="mb-0">@vehicle.Make @vehicle.Model <b>@vehicle.LicensePLate</b></p>
+                    <p class="mb-0">***</p>
+                }
+                
+            </div>
+            <div class="form-inline">
+                @if (User.IsInRole(RoleConstants.Administrator) || User.IsInRole(RoleConstants.ServiceAdviser))
+                {
+                    <a asp-controller="OperatingCards" asp-action="Add" asp-route-customerId="@customer.Id" 
+                     method="post" class="btn btn-warning">Generate operating card</a>
+                    @*<form asp-action="Delete" asp-controller="Parts" method="post">
+                        <input name="id" type="hidden" value="@part.Id" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>*@
+                }
+            </div>
+        </div>
+    }
+</div>

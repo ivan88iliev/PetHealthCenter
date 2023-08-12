@@ -1,0 +1,39 @@
+﻿@model ShopServiceViewModel
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form method="post">
+            <input type="hidden" asp-for="@Model.Id" />
+            <input type="hidden" asp-for="@Model.VehicleComponentId" />
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" placeholder="Name...">
+                <span asp-validation-for="Name" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <input asp-for="Description" class="form-control" placeholder="Description...">
+                <span asp-validation-for="Description" class="small text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control">
+                <span asp-validation-for="Price" class="small text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.VehicleComponentId" class="form-label">Vehicle component</label>
+                <select asp-for="@Model.VehicleComponentId" class="form-control">
+                    @foreach (var component in Model.VehicleComponents)
+                    {
+                        <option value="@component.Id">@component.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="VehicleComponentId" class="text-danger"></span>
+            </div>
+
+            <div class="text-center">
+                <input class="btn btn-primary mt-3" type="submit" value="View changes" />
+            </div>
+        </form>
+    </div>
+</div>
