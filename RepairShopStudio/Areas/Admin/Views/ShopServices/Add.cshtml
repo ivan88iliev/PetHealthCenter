@@ -1,0 +1,49 @@
+﻿@using RepairShopStudio.Core.Models.ShopService
+@model AddShopServiceViewModel
+
+@{
+    ViewBag.Title = "Add new service";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form method="post">
+            <div class="mb-3">
+                <label asp-for="@Model.Name" class="form-label">Service name</label>
+                <input asp-for="@Model.Name" class="form-control" aria-required="true" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Description" class="form-label">Description</label>
+                <input asp-for="@Model.Description" class="form-control" aria-required="true" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Price" class="form-label">Price</label>
+                <input asp-for="@Model.Price" class="form-control" aria-required="true" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.VehicleComponentId" class="form-label">Vehicle component</label>
+                <select asp-for="@Model.VehicleComponentId" class="form-control">
+                    @foreach (var component in Model.VehicleComponents)
+                    {
+                        <option value="@component.Id">@component.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="VehicleComponentId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Add service" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

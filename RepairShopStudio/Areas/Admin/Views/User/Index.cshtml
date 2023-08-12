@@ -1,0 +1,44 @@
+﻿@using RepairShopStudio.Infrastructure.Data.Models.User
+@model ICollection<ApplicationUser>
+
+@{
+    ViewData["TItle"] = "Add job name to user";
+}
+
+<div class="text-center">
+    <h1 class="display-4"> Users</h1>
+    @if (@Model != null && @Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    @*<th scope="col">#</th>*@
+                    <th scope="col">First name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">User name</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        @*<th scope="row">@user.Id</th>*@
+                        <td>@user.FirstName</td>
+                        <td>@user.LastName</td>
+                        <td>@user.UserName</td>
+                        <td>@user.Email</td>
+                        <td>
+                            <a asp-controller="User" asp-action="Edit" asp-route-id="@user.Id">Edit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+
+<div class="text-center">
+
+</div>

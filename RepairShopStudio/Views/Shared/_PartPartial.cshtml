@@ -1,0 +1,29 @@
+﻿@model PartServiceModel
+
+<div class="col-md-4">
+    
+    <div class="card mb-3">
+        <img class="card-img-top" src="@Model.ImageUrl" alt="Part Image">
+        <div class="card-body text-center">
+            <h5 class="card-title mt-1">@Model.Name</h5>
+            <p class="mb-0"><b>Availability:</b> @Model.Stock</p>
+            <p class="mb-0"><b>Manufacturer:</b> @Model.Manufacturer</p>
+            <p class="mb-0"><b>Original MPN:</b> @Model.OriginalMpn</p>
+            <p class="mb-0"><b>Description:</b> @Model.Description</p>
+            <p class="mb-0"><b>Price to sell:</b> @String.Format("{0:f2}", @Model.PriceSell)</p>
+            <p class="mb-0"><b>Price to buy:</b> @String.Format("{0:f2}", @Model.PriceBuy)</p>
+            <p><b>Vehicle component:</b> @Model.VehicleComponent</p>
+        </div>
+        <div class="form-inline">
+            @if (User.IsInRole(RoleConstants.Administrator))
+            {
+                <a asp-controller="Parts" asp-area="Admin" asp-action="Edit" asp-route-Id="@Model.Id" class="btn btn-warning">Edit</a>
+
+                <form asp-action="Delete" asp-area="Admin" asp-controller="Parts" method="post">
+                    <input name="id" type="hidden" value="@Model.Id" />
+                    <button type="submit" onsubmit="return confirm('Are you sure?');" class="btn btn-danger">Delete</button>
+                </form>
+            }
+        </div>
+    </div>
+</div>

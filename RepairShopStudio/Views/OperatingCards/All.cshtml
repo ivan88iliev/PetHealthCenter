@@ -1,0 +1,33 @@
+﻿@model IEnumerable<OperatingCardViewModel>
+
+@{
+    ViewBag.Title = "Operating cards in progress";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="text-center row">
+    @foreach (var card in Model)
+    {
+        <div class="card col-4" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title mt-1">@card.DocumentNumber</h5>
+                <p class="mb-0"><b>Customer:</b> @card.CustomerName</p>
+                <p class="mb-0"><b>Vehicle license plate:</b> @card.VehicleLicensePlate</p>
+                <p class="mb-0"><b>Mechanic:</b> @card.MechanicName</p>
+                <p class="mb-0"><b>Part:</b> @card.PartName</p>
+                <p class="mb-0"><b>Service:</b> @card.ServiceName</p>
+                <p><b>Date of creation:</b> @card.IssueDate</p>
+                <p class="mb-0"><b>Status:</b> @(card.IsActive ? "Pending" : "Completed")</p>
+            </div>
+            <div class="form-inline">
+                @if (User.IsInRole(RoleConstants.Mechanic))
+                {
+                    <a asp-controller="OperatingCards" asp-action="Finish" asp-route-cardId="@card.Id" class="btn btn-danger">Mark as Completed</a>
+                    
+                }
+            </div>
+        </div>
+    }
+</div>
