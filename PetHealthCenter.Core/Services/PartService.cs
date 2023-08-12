@@ -30,7 +30,7 @@ namespace PetHealthCenter.Core.Services
         /// Create new part
         /// </summary>
         /// <param name="model"></param>
-        /// <returns>Add new part to Data-Base</returns>
+        /// <returns>Add new product to Data-Base</returns>
         public async Task AddPartAsync(AddPartViewModel model)
         {
             var entity = new Part()
@@ -77,9 +77,9 @@ namespace PetHealthCenter.Core.Services
         }
 
         /// <summary>
-        /// Get all parts from Data-Base
+        /// Get all products from Data-Base
         /// </summary>
-        /// <returns>List of all parts</returns>
+        /// <returns>List of all products</returns>
         public async Task<IEnumerable<PartViewModel>> GetAllAsync()
         {
             var entities = await context.Parts
@@ -332,7 +332,7 @@ namespace PetHealthCenter.Core.Services
         /// <param name="sorting"></param>
         /// <param name="currentPage"></param>
         /// <param name="housesPerPage"></param>
-        /// <returns>List of all parts in data-base</returns>
+        /// <returns>List of all products in data-base</returns>
         /// <exception cref="NotImplementedException"></exception>
         public async Task<PartsFilterQueryModel> AllAsync(string? animalComponent = null, string? manufacturer = null, string? searchTerm = null, PartSorting sorting = PartSorting.Newest, int currentPage = 1, int partsPerPage = 1)
         {
@@ -418,9 +418,9 @@ namespace PetHealthCenter.Core.Services
         }
 
         /// <summary>
-        /// Geta all parts manufacturers
+        /// Geta all products manufacturers
         /// </summary>
-        /// <returns>List of all parts manufacturers</returns>
+        /// <returns>List of all products manufacturers</returns>
         public async Task<IEnumerable<string>> AllManufacturers()
         {
             var result = await repo.AllReadonly<Part>()

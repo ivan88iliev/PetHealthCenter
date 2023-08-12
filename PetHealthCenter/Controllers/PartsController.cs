@@ -23,9 +23,9 @@ namespace PetHealthCenter.Controllers
         }
 
         /// <summary>
-        /// Get all parts from Data-Base
+        /// Get all products from Data-Base
         /// </summary>
-        /// <returns>A list of all parts</returns>
+        /// <returns>A list of all products</returns>
         [HttpGet]
         public async Task<IActionResult> All([FromQuery]PartsQueryModel query)
         {

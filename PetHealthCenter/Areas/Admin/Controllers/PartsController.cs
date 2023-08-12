@@ -19,9 +19,9 @@ namespace PetHealthCenter.Areas.Admin.Controllers
         }
 
         /// <summary>
-        /// Get all parts from Data-Base
+        /// Get all products from Data-Base
         /// </summary>
-        /// <returns>A list of all parts</returns>
+        /// <returns>A list of all products</returns>
         [HttpGet]
         public async Task<IActionResult> All([FromQuery] PartsQueryModel query)
         {
@@ -60,7 +60,7 @@ namespace PetHealthCenter.Areas.Admin.Controllers
         /// Create new part
         /// </summary>
         /// <param name="model"></param>
-        /// <returns>Add new part to Data-Base</returns>
+        /// <returns>Add new product to Data-Base</returns>
         [HttpPost]
         public async Task<IActionResult> Add(AddPartViewModel model)
         {

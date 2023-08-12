@@ -206,9 +206,9 @@ namespace PetHealthCenter.Core.Services
         }
 
         /// <summary>
-        /// Get all parts from Data-Base
+        /// Get all products from Data-Base
         /// </summary>
-        /// <returns>List of all parts</returns>
+        /// <returns>List of all products</returns>
         public async Task<IEnumerable<Part>> GetPartsAsync()
         {
             var result = await context.Parts.ToListAsync();

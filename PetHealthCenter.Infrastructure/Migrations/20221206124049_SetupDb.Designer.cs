@@ -985,7 +985,7 @@ namespace PetHealthCenter.Infrastructure.Migrations
                         new
                         {
                             Id = 2,
-                            Name = "Tranmission system"
+                            Name = "Tablets"
                         },
                         new
                         {

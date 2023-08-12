@@ -17,7 +17,7 @@ namespace PetHealthCenter.Areas.Admin.Controllers
         /// <summary>
         /// Get all health services from Data-Base
         /// </summary>
-        /// <returns>List of all shop-services</returns>
+        /// <returns>List of all health-services</returns>
         public async Task<IActionResult> All()
         {
             var model = await healthServiceService.GetAllAsync();

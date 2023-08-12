@@ -15,7 +15,7 @@
         public const string InvalidGetCustomerPetsException = "Something went wrong while getting all customer animals from data-base!";
         public const string InvalidGetServicesException = "Something went wrong while getting all health services from data-base!";
         public const string InvalidGetDoctorsException = "Something went wrong while getting all doctors from data-base!";
-        public const string InvalidGetPartsException = "Something went wrong while getting all parts from data-base!";
+        public const string InvalidGetPartsException = "Something went wrong while getting all products from data-base!";
         public const string InvalidGetHealthServicesException = "Something went wrong while getting all health services from data-base!";
         public const string InvalidCardIdExceptionMessage = "The Id of the operating card is invalid!";
         public const string InvalidUserIdExceptionMessage = "The Id of the user is invalid!";
@@ -26,7 +26,7 @@
         public const string InvalidGetProductComponentsException = "Something went wrong while getting all product components from data-base!";
         public const string InvalidGetPartProductComponentException = "Something went wrong while getting part's product components from data-base!";
         public const string InvalidGetPartDeatalsException = "Part with this Id does not exists in data base or it's property IsActive == false";
-        public const string InvalidGetManufacturersException = "Something went wrong while getting all parts manufacturer from data-base!";
+        public const string InvalidGetManufacturersException = "Something went wrong while getting all products manufacturer from data-base!";
         public const string InvalidGetAllOperatingCardsException = "Something went wrong while getting all operating cards from data-base!";
         public const string UnauthorizedActionException = "User is not authorized to perform this action!";
 

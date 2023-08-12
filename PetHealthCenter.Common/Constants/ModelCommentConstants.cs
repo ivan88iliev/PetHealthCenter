@@ -53,7 +53,7 @@
             public const string AddViewModelApplicationUserId = "The Id of the user (doctor) that must perform the service"; 
             public const string AddViewModelApplicationUsers = "Collection of all users/doctors that are can perform the service";
             public const string AddViewModelPartId = "The id of the part, used to perform the service";
-            public const string AddViewModelParts = "Collection of all parts in storage, that can be used to perform the services";
+            public const string AddViewModelParts = "Collection of all products in storage, that can be used to perform the services";
             public const string AddViewModelServiceId = "The id of the service";
             public const string AddViewModelHealthServices = "Collection of all survices, that can be performed";
             public const string AddViewModelIssueDate = "Date of creation of the document";

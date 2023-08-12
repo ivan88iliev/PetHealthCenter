@@ -540,7 +540,7 @@ namespace PetHealthCenter.Infrastructure.Migrations
                 values: new object[,]
                 {
                     { 1, "Specie" },
-                    { 2, "Tranmission system" },
+                    { 2, "Tablets" },
                     { 3, "Front and rear axle" },
                     { 4, "Vaccine" },
                     { 5, "Suspenssion system" },

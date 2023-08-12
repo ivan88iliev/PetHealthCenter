@@ -25,7 +25,7 @@ namespace PetHealthCenter.Infrastructure.Data.Configuration
             var transmissionSystem = new ProductComponent()
             {
                 Id = 2,
-                Name = "Tranmission system"
+                Name = "Tablets"
             };
             animalComponents.Add(transmissionSystem);
 
