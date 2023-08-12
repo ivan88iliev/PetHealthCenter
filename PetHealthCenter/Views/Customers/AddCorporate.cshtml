@@ -1,0 +1,105 @@
+﻿@model CustomerAddViewModel
+
+@{
+    ViewBag.Title = "Add corporate customer";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form method="post">
+            <input type="hidden" asp-for="@Model.Id" />
+            <div class="mb-3">
+                <label asp-for="@Model.Name" class="form-label">Customer's name</label>
+                <input asp-for="@Model.Name" class="form-control" aria-required="true" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.PhoneNumber" class="form-label">Phone number (+359)</label>
+                <input asp-for="@Model.PhoneNumber" class="form-control" aria-required="true" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Email" class="form-label">E-mail</label>
+                <input asp-for="@Model.Email" class="form-control" aria-required="true" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Address.ZipCode" class="form-label">Zip code</label>
+                <input asp-for="@Model.Address.ZipCode" class="form-control" aria-required="true" />
+                <span asp-validation-for="Address.ZipCode" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Address.AddressText" class="form-label">Address text</label>
+                <input asp-for="@Model.Address.AddressText" class="form-control" aria-required="true" />
+                <span asp-validation-for="Address.AddressText" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Address.TownName" class="form-label">Town</label>
+                <input asp-for="@Model.Address.TownName" class="form-control" aria-required="true" />
+                <span asp-validation-for="Address.TownName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Uic" class="form-label">Unified Identification Code</label>
+                <input asp-for="@Model.Uic" class="form-control" aria-required="true" />
+                <span asp-validation-for="@Model.Uic" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.ResponsiblePerson" class="form-label">Responsible Person</label>
+                <input asp-for="@Model.ResponsiblePerson" class="form-control" aria-required="true" />
+                <span asp-validation-for="@Model.ResponsiblePerson" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Pet.Make" class="form-label">Pet Make</label>
+                <input asp-for="@Model.Pet.Make" class="form-control" value="" />
+                <span asp-validation-for="@Model.Pet.Make" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Pet.Model" class="form-label">Pet Model</label>
+                <input asp-for="@Model.Pet.Model" class="form-control" value="" />
+                <span asp-validation-for="@Model.Pet.Model" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Pet.FIrstRegistration" class="form-label">First Registration</label>
+                <input asp-for="@Model.Pet.FIrstRegistration" class="form-control" value="" />
+                <span asp-validation-for="@Model.Pet.FIrstRegistration" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Pet.VinNumber" class="form-label">VinNumber</label>
+                <input asp-for="@Model.Pet.VinNumber" class="form-control" value="" />
+                <span asp-validation-for="@Model.Pet.VinNumber" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Pet.Power" class="form-label">Power</label>
+                <input asp-for="@Model.Pet.Power" class="form-control" value="" />
+                <span asp-validation-for="@Model.Pet.Power" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Pet.IdentificationNUmber" class="form-label">IdentificationNUmber</label>
+                <input asp-for="@Model.Pet.IdentificationNUmber" class="form-control" value="" />
+                <span asp-validation-for="@Model.Pet.IdentificationNUmber" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Pet.SpecieTypeId" class="form-label">Specie type</label>
+                <select asp-for="@Model.Pet.SpecieTypeId" class="form-control">
+                    @foreach (var component in Model.Pet.SpecieTypes)
+                    {
+                        <option value="@component.Id">@component.Name</option>
+                    }
+                </select>
+                <span asp-validation-for="@Model.Pet.SpecieTypeId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Add customer" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="mt-4 p-5 bg-transparent text-center">
+    <h1 class=" display-6" >Hello, Admin!</h1>
+    <p class="lead mb-1 mt-3">
+        Here you can <b>create</b>, <b>edit</b>,
+        <b>delete</b> and <b>view details </b> of medProducts, services etc... .
+    </p>
+    <p class="lead mt-1">
+        You can also <b>control the profiles of all employees </b> in the system.
+    </p>
+    <hr class="my-4">
+    <p>
+        <a asp-area="Admin" asp-controller="User" asp-action="Index" class="btn btn-primary btn-lg btn-info">All Employees</a>
+        <a asp-area="Admin" asp-controller="User" asp-action="Register" class="btn btn-primary btn-lg btn-info">Add new employee</a>
+    </p>
+    <p>
+        <a asp-area="Admin" asp-controller="Parts" asp-action="Add" class="btn btn-primary btn-lg btn-danger">Add new part</a>
+        <a asp-area="Admin" asp-controller="Parts" asp-action="All" class="btn btn-primary btn-lg btn-danger">See all medProducts</a>
+    </p>
+    <p>
+        <a asp-area="Admin" asp-controller="HealthServices" asp-action="Add" class="btn btn-primary btn-lg btn-success">Add new service</a>
+        <a asp-area="Admin" asp-controller="HealthServices" asp-action="All" class="btn btn-primary btn-lg btn-success">See all services</a>
+    </p>
+    <p>
+        <a asp-area="Admin" asp-controller="Customers" asp-action="All" class="btn btn-primary btn-lg">All Customers</a>
+        <a asp-area="Admin" asp-controller="Customers" asp-action="AddRegular" class="btn btn-primary btn-lg">Add regular customer</a>
+        <a asp-area="Admin" asp-controller="Customers" asp-action="AddCorporate" class="btn btn-primary btn-lg">Add corporate customer</a>
+    </p>
+    <p>
+        <a asp-area="Admin" asp-controller="OperatingCards" asp-action="All" class="btn btn-primary btn-lg btn-warning">Pending operating cards</a>
+        <a asp-area="Admin" asp-controller="OperatingCards" asp-action="AllFinished" class="btn btn-primary btn-lg btn-warning">Completed operating cards</a>
+    </p>
+</div>
+
+<div class="mb-5"></div>
+
+<div class="row">
+    <div class="col-12 text-center">
+        <button class="btn btn-primary" id="statistics-button">Show Statistics</button>
+    </div>
+</div>
+<div class="mt-4 p-5 bg-light d-none" id="statistics">
+    <div class="row">
+        <h2 class="col-md-4 text-center" id="total-medproducts"></h2>
+        <h2 class="col-md-4 text-center" id="total-services"></h2>
+    </div>
+    <div class="row">
+        <h2 class="col-md-4 text-center" id="total-customers"></h2>
+        <h2 class="col-md-4 text-center" id="total-operating-cards"></h2>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $('#statistics-button').on('click', ev => {
+            $.get('https://localhost:7244/api/statistics', (data) => {
+                $('#total-medproducts').text(data.totalParts + " medProducts");
+                $('#total-services').text(data.totalServices + " services");
+                $('#total-customers').text(data.totalCustomers + " customers");
+                $('#total-operating-cards').text(data.totalOperatingCards + " operating cards");
+                $('#statistics').removeClass('d-none');
+                $('#statistics-button').hide();
+            });
+        });
+    </script>
+}
