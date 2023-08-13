@@ -63,8 +63,8 @@ namespace PetHealthCenter.UnitTests
                     Id = 100,
                     Make = "Test",
                     Model = "Test",
-                    VinNumber = "1111111111111",
-                    Power = 100,
+                    PetNumber = "1111111111111",
+                    Weight = 100,
                     SpecieTypeId = 1,
                     IdentificationNUmber = "B3333BB",
                     FIrstRegistration = DateTime.Today
@@ -100,8 +100,8 @@ namespace PetHealthCenter.UnitTests
                     Id = 110,
                     Make = "Test",
                     Model = "Test",
-                    VinNumber = "1111111111111",
-                    Power = 100,
+                    PetNumber = "1111111111111",
+                    Weight = 100,
                     SpecieTypeId = 1,
                     IdentificationNUmber = "B3333BB",
                     FIrstRegistration = DateTime.Today
@@ -143,8 +143,8 @@ namespace PetHealthCenter.UnitTests
                     Id = 100,
                     Make = "Test",
                     Model = "Test",
-                    VinNumber = "1111111111111",
-                    Power = 100,
+                    PetNumber = "1111111111111",
+                    Weight = 100,
                     SpecieTypeId = 1,
                     IdentificationNUmber = "B3333BB",
                     FIrstRegistration = DateTime.Today

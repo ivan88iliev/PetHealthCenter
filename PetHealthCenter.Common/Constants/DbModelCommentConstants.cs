@@ -128,14 +128,14 @@
         {
             public const string PetMain = "Pet, owned by customer";
             public const string PetId = "The Id of the animal";
-            public const string PetMake = "Pet make name";
-            public const string PetModel = "Pet model name";
+            public const string PetOrigin = "Pet origin name";
+            public const string PetModel = "Pet subspecies name";
             public const string PetIdentificationNumber = "Identification number number of the animal";
             public const string PetFirstRegistration = "Date of the first registration of the animal";
             public const string PetSpecieTypeId = "The Id of the specie type of the animal";
             public const string PetSpecieType = "Specie type of the animal";
-            public const string PetPower = "Specie power in Hp";
-            public const string PetVinNumber = "VIN number of the animal";
+            public const string PetWeight = "Specie weight in Kg";
+            public const string PetPetNumber = "VIN number of the animal";
             public const string PetCustomerId = "The Id of the customer/owner of the animal";
             public const string PetCustomer = "Customer/owner of the animal";
         }

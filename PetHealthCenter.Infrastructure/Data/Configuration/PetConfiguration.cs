@@ -28,8 +28,8 @@ namespace PetHealthCenter.Infrastructure.Data.Configuration
                 IdentificationNUmber = "B5466HA",
                 FIrstRegistration = DateTime.Parse("2013-06-23"),
                 SpecieTypeId = 2,
-                Power = 272,
-                VinNumber = "12312324125",
+                Weight = 272,
+                PetNumber = "12312324125",
                 CustomerId = 1
             };
 
@@ -43,8 +43,8 @@ namespace PetHealthCenter.Infrastructure.Data.Configuration
                 IdentificationNUmber = "B5432PA",
                 FIrstRegistration = DateTime.Parse("2013-06-24"),
                 SpecieTypeId = 1,
-                Power = 156,
-                VinNumber = "12312324642",
+                Weight = 156,
+                PetNumber = "12312324642",
                 CustomerId = 2
             };
 

@@ -187,8 +187,8 @@ namespace PetHealthCenter.UnitTests
                 Make = string.Empty,
                 Model = string.Empty,
                 IdentificationNUmber = string.Empty,
-                Power = 50,
-                VinNumber = string.Empty,
+                Weight = 50,
+                PetNumber = string.Empty,
                 CustomerId = customer.Id,
                 FIrstRegistration = DateTime.Today,
                 SpecieTypeId = 1
@@ -201,8 +201,8 @@ namespace PetHealthCenter.UnitTests
                 Make = string.Empty,
                 Model = string.Empty,
                 IdentificationNUmber = string.Empty,
-                Power = 50,
-                VinNumber = string.Empty,
+                Weight = 50,
+                PetNumber = string.Empty,
                 CustomerId = customer.Id,
                 FIrstRegistration = DateTime.Today,
                 SpecieTypeId = 1

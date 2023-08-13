@@ -14,8 +14,8 @@ namespace PetHealthCenter.Infrastructure.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(PetMakeMaxLength)]
-        [Comment(PetMake)]
+        [StringLength(PetOriginMaxLength)]
+        [Comment(PetOrigin)]
         public string Make { get; set; } = null!;
 
         [Required]
@@ -40,14 +40,14 @@ namespace PetHealthCenter.Infrastructure.Data.Models
         public SpecieType SpecieType { get; set; } = null!;
 
         [Required]
-        [Range(SpecieMinPower, SpecieMaxPower)]
-        [Comment(PetPower)]
-        public int Power { get; set; }
+        [Range(SpecieMinWeight, SpecieMaxWeight)]
+        [Comment(PetWeight)]
+        public int Weight { get; set; }
 
         [Required]
-        [StringLength(VinNumberLength)]
-        [Comment(PetVinNumber)]
-        public string VinNumber { get; set; } = null!;
+        [StringLength(PetNumberLength)]
+        [Comment(PetPetNumber)]
+        public string PetNumber { get; set; } = null!;
 
         [Comment(PetCustomerId)]
         public int CustomerId { get; set; }

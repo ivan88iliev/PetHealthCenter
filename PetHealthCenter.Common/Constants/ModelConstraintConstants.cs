@@ -68,15 +68,15 @@ namespace PetHealthCenter.Common.Constants
 
         public static class Pet
         {
-            public const int PetMakeMaxLength = 30;
-            public const int PetMakeMinLength = 3;
+            public const int PetOriginMaxLength = 30;
+            public const int PetOriginMinLength = 3;
             public const int PetModelMaxLength = 70;
             public const int PetModelMinLength = 1;
             public const int IdentificationNumberMaxLength = 8;
             public const int IdentificationNumberMinLength = 7;
-            public const int VinNumberLength = 17;
-            public const int SpecieMaxPower = 1914;
-            public const int SpecieMinPower = 1;
+            public const int PetNumberLength = 17;
+            public const int SpecieMaxWeight = 1914;
+            public const int SpecieMinWeight = 1;
         }
 
         public static class Customer

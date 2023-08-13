@@ -14,7 +14,7 @@ namespace PetHealthCenter.Core.Models.Pet
         public int Id { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
-        [StringLength(PetMakeMaxLength, MinimumLength = PetMakeMinLength, ErrorMessage = PetMakeLength)]
+        [StringLength(PetOriginMaxLength, MinimumLength = PetOriginMinLength, ErrorMessage = PetOriginLength)]
         [Comment(AddViewModelMake)]
         public string? Make { get; set; }
 
@@ -36,14 +36,14 @@ namespace PetHealthCenter.Core.Models.Pet
         public int SpecieTypeId { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
-        [Range(SpecieMinPower, SpecieMaxPower, ErrorMessage = PetPowerRange)]
-        [Comment(AddViewModelPower)]
-        public int Power { get; set; }
+        [Range(SpecieMinWeight, SpecieMaxWeight, ErrorMessage = PetWeightRange)]
+        [Comment(AddViewModelWeight)]
+        public int Weight { get; set; }
 
         [Required(ErrorMessage = RequiredField)]
-        [StringLength(VinNumberLength, MinimumLength =VinNumberLength, ErrorMessage = PetVINRange)]
-        [Comment(AddViewModelVinNumber)]
-        public string? VinNumber { get; set; }
+        [StringLength(PetNumberLength, MinimumLength =PetNumberLength, ErrorMessage = PetVINRange)]
+        [Comment(AddViewModelPetNumber)]
+        public string? PetNumber { get; set; }
 
         [Comment(AddViewModelSpecieTypes)]
         public ICollection<Infrastructure.Data.Models.SpecieType> SpecieTypes { get; set; }

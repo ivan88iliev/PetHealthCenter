@@ -196,13 +196,13 @@
         {
             public const string AddViewModelMain = "Model, used to add a animal";
             public const string AddViewModelId = "The Id of the animal";
-            public const string AddViewModelMake = "Pet make name";
-            public const string AddViewModelModel = "Pet model name";
+            public const string AddViewModelMake = "Pet origin name";
+            public const string AddViewModelModel = "Pet subspecies name";
             public const string AddViewModelIdentificationNUmber = "Identification number of the animal";
             public const string AddViewModelFIrstRegistration = "Date of the first registration of the animal";
             public const string AddViewModelSpecieTypeId = "The Id of the specie type";
-            public const string AddViewModelPower = "Specie power in Hp";
-            public const string AddViewModelVinNumber = "VIN number of the animal";
+            public const string AddViewModelWeight = "Specie weight in Kg";
+            public const string AddViewModelPetNumber = "VIN number of the animal";
             public const string AddViewModelSpecieTypes = "Collection of all specie types";
         }
     }

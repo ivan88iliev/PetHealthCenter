@@ -40,8 +40,8 @@ namespace PetHealthCenter.UnitTests
                 IdentificationNUmber = "B3333BB",
                 FIrstRegistration = DateTime.Parse("2013-06-23"),
                 SpecieTypeId = 2,
-                Power = 272,
-                VinNumber = "12312324125",
+                Weight = 272,
+                PetNumber = "12312324125",
             };
 
             await repo.AddAsync(animal);

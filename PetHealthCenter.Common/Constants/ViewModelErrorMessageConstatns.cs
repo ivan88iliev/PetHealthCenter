@@ -28,10 +28,10 @@
         public const string ServiceDescriptionLength = "The field must contains no more than 400 and no less than 5 characters.";
         public const string ServicePriceRange = "The number must be in range between 0.1 and 10000.00 .";
 
-        public const string PetMakeLength = "The field must contains no more than 30 and no less than 3 characters.";
+        public const string PetOriginLength = "The field must contains no more than 30 and no less than 3 characters.";
         public const string PetModelLength = "The field must contains no more than 70 and no less than 1 characters.";
         public const string PetIdentificationNumberNumberLength = "The field must contains no more than 8 and no less than 7 characters.";
-        public const string PetPowerRange = "The number must be in range between 1 and 1914.";
+        public const string PetWeightRange = "The number must be in range between 1 and 1914.";
         public const string PetVINRange = "The field must contains exactly 17 characters.";
     }
 }

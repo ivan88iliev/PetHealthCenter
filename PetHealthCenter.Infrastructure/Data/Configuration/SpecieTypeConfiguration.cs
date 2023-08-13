@@ -15,37 +15,37 @@ namespace PetHealthCenter.Infrastructure.Data.Configuration
         {
             var specieTypes = new List<SpecieType>();
 
-            var gasolineSpecie = new SpecieType()
+            var dogSpecie = new SpecieType()
             {
                 Id = 1,
-                Name = "Gasoline"
+                Name = "Dog"
             };
 
-            specieTypes.Add(gasolineSpecie);
+            specieTypes.Add(dogSpecie);
 
-            var dieselSpecie = new SpecieType()
+            var catSpecie = new SpecieType()
             {
                 Id = 2,
-                Name = "Diesel"
+                Name = "Cat"
             };
 
-            specieTypes.Add(dieselSpecie);
+            specieTypes.Add(catSpecie);
 
-            var hybridSpecie = new SpecieType()
+            var hamsterSpecie = new SpecieType()
             {
                 Id = 3,
-                Name = "Hybrid"
+                Name = "Hamster"
             };
 
-            specieTypes.Add(hybridSpecie);
+            specieTypes.Add(hamsterSpecie);
 
-            var electricSpecie = new SpecieType()
+            var birdSpecie = new SpecieType()
             {
                 Id = 4,
-                Name = "Electric"
+                Name = "Bird"
             };
 
-            specieTypes.Add(electricSpecie);
+            specieTypes.Add(birdSpecie);
 
             return specieTypes;
         }

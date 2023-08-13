@@ -277,22 +277,22 @@ namespace PetHealthCenter.Infrastructure.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Gasoline"
+                            Name = "Dog"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Diesel"
+                            Name = "Cat"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Hybrid"
+                            Name = "Hamster"
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Electric"
+                            Name = "Bird"
                         });
                 });
 
@@ -903,19 +903,19 @@ namespace PetHealthCenter.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)")
-                        .HasComment("Pet make name");
+                        .HasComment("Pet origin name");
 
                     b.Property<string>("Model")
                         .IsRequired()
                         .HasMaxLength(70)
                         .HasColumnType("nvarchar(70)")
-                        .HasComment("Pet model name");
+                        .HasComment("Pet subspecies name");
 
-                    b.Property<int>("Power")
+                    b.Property<int>("Weight")
                         .HasColumnType("int")
-                        .HasComment("Specie power in Hp");
+                        .HasComment("Specie weight in Kg");
 
-                    b.Property<string>("VinNumber")
+                    b.Property<string>("PetNumber")
                         .IsRequired()
                         .HasMaxLength(17)
                         .HasColumnType("nvarchar(17)")
@@ -941,8 +941,8 @@ namespace PetHealthCenter.Infrastructure.Migrations
                             IdentificationNUmber = "B5466HA",
                             Make = "Labrador",
                             Model = "American",
-                            Power = 272,
-                            VinNumber = "12312324125"
+                            Weight = 272,
+                            PetNumber = "12312324125"
                         },
                         new
                         {
@@ -953,8 +953,8 @@ namespace PetHealthCenter.Infrastructure.Migrations
                             IdentificationNUmber = "B5432PA",
                             Make = "Husky",
                             Model = "Siberian",
-                            Power = 156,
-                            VinNumber = "12312324642"
+                            Weight = 156,
+                            PetNumber = "12312324642"
                         });
                 });
 

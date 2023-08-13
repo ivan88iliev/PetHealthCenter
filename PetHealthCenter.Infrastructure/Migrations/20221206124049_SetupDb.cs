@@ -329,13 +329,13 @@ namespace PetHealthCenter.Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Make = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false, comment: "Pet make name"),
-                    Model = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false, comment: "Pet model name"),
+                    Make = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false, comment: "Pet origin name"),
+                    Model = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false, comment: "Pet subspecies name"),
                     IdentificationNUmber = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false, comment: "Identification number of the animal"),
                     FIrstRegistration = table.Column<DateTime>(type: "datetime2", nullable: false, comment: "Date of the first registration of the animal"),
                     SpecieTypeId = table.Column<int>(type: "int", nullable: false, comment: "Specie type of the animal"),
-                    Power = table.Column<int>(type: "int", nullable: false, comment: "Specie power in Hp"),
-                    VinNumber = table.Column<string>(type: "nvarchar(17)", maxLength: 17, nullable: false, comment: "VIN number of the animal"),
+                    Weight = table.Column<int>(type: "int", nullable: false, comment: "Specie weight in Kg"),
+                    PetNumber = table.Column<string>(type: "nvarchar(17)", maxLength: 17, nullable: false, comment: "VIN number of the animal"),
                     CustomerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -518,10 +518,10 @@ namespace PetHealthCenter.Infrastructure.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Gasoline" },
-                    { 2, "Diesel" },
-                    { 3, "Hybrid" },
-                    { 4, "Electric" }
+                    { 1, "Dog" },
+                    { 2, "Cat" },
+                    { 3, "Hamster" },
+                    { 4, "Bird" }
                 });
 
             migrationBuilder.InsertData(
@@ -584,7 +584,7 @@ namespace PetHealthCenter.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "Pets",
-                columns: new[] { "Id", "CustomerId", "SpecieTypeId", "FIrstRegistration", "IdentificationNUmber", "Make", "Model", "Power", "VinNumber" },
+                columns: new[] { "Id", "CustomerId", "SpecieTypeId", "FIrstRegistration", "IdentificationNUmber", "Make", "Model", "Weight", "PetNumber" },
                 values: new object[,]
                 {
                     { 1, 1, 2, new DateTime(2013, 6, 23, 0, 0, 0, 0, DateTimeKind.Unspecified), "B5466HA", "Labrador", "American", 272, "12312324125" },
